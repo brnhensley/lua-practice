@@ -1,4 +1,4 @@
-function randomCalc(func)
+function random_calc(func)
     print(func)
     if func == "add" then
         print(string.format("%s + %s = %s", num1, num2, add(num1, num2)))
@@ -32,4 +32,4 @@ calculations = { "add", "subtract", "multiply", "divide" }
 num1 = math.random(0, 99999)
 num2 = math.random(0, 99999)
 
-randomCalc(calculations[math.random(1, 4)])
+random_calc(calculations[math.random(1, 4)])
