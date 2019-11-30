@@ -1,5 +1,6 @@
--- Lua is not object oriented, but it can be faked with tables
+-- Lua is not object oriented, but it can be faked with tables and metatables
 
+-- table not object
 Animal = {
     height = 0,
     weight = 0,
@@ -7,6 +8,8 @@ Animal = {
     sound = "none"
 }
 
+-- method of the Animal table, this can act as a contructor by creating an object like
+-- table and returning it
 function Animal:new(height, weight, name, sound)
     setmetatable({}, Animal)
 
@@ -23,12 +26,13 @@ function Animal:getProps()
     return animalProps
 end
 
+-- create new instance of Animal
 nag = Animal:new(235, 70, "Nag", "Did you call your mother?")
 
 print(nag.name)
 print(nag:getProps())
 
--- Inheretance
+-- Inheretance is possible
 
 Cat = Animal:new() --contains all methods and props from Animal
 
